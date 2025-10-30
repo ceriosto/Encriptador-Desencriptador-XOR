@@ -5,8 +5,7 @@ def xor(texto, clave):
         resultado += chr(ord(texto[i]) ^ ord(clave[i % len(clave)]))
     return resultado
 texto = input("Escribe el texto a cifrar: ")
-caracteres = "01"
-llave = ''.join(random.choice(caracteres) for _ in range(len(texto)))
+llave = ''.join(str(random.randint(0, 1)) for _ in range(len(texto)))
 print("Llave generada:", llave)
 cifrado = xor(texto, llave)
 print("Texto cifrado:", cifrado)
